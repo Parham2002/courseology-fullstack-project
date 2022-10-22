@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.header-container {
+    width: 100%;
+    height: 10vh;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        margin-left: 50px;
+    }
+
+    &__lists {
+        display: flex;
+        list-style: none;
+        gap: 50px;
+        margin-right: 50px;
+    }
+}
+
+.mainPage-container {
+    max-width: 100%;
+    height: 90vh;
+}
