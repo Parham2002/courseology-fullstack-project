@@ -4,9 +4,8 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>Homeraes
-      wadsd
-      dawdas
+    <div>
+      this is home
     </div>
   )
 }
