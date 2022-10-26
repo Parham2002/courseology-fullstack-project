@@ -1,7 +1,9 @@
 package com.example.course;
 
+import javax.persistence.Entity;
 import java.time.LocalDate;
 
+@Entity
 public class Course {
 
     private long id;
