@@ -1,19 +1,36 @@
 package com.example.course;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Course {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String course;
+    private String courseName;
+    private String category;
+    private String author;
     private LocalDate dateCreated = LocalDate.now();
+    private String completionTime;
+    private int price;
 
-    public Course(long id, String course, LocalDate dateCreated) {
+    public Course() {
+
+    }
+
+    public Course(long id, String courseName, String category, String author, String completionTime, int price) {
         this.id = id;
-        this.course = course;
-        this.dateCreated = dateCreated;
+        this.courseName = courseName;
+        this.category = category;
+        this.author = author;
+        this.completionTime = completionTime;
+        this.price = price;
     }
 
     public long getId() {
@@ -24,12 +41,28 @@ public class Course {
         this.id = id;
     }
 
-    public String getCourse() {
-        return course;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public LocalDate getDateCreated() {
@@ -39,4 +72,21 @@ public class Course {
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
     }
+
+    public String getCompletionTime() {
+        return completionTime;
+    }
+
+    public void setCompletionTime(String completionTime) {
+        this.completionTime = completionTime;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
 }

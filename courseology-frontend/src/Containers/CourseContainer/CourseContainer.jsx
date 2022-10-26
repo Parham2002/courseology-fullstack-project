@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./CourseContainer.scss";
 import Course from "../../Components/Course/Course"
-import CoursesData from "../../Assets/TempData/CoursesData"
 
 const CourseContainer = () => {
+  const [courses, setCourses] = useState([])
+
+  const getCourses = async () => {
+    const response = await fetch("http://localhost:8080/courses");
+    const courseData = await response.json();
+    setCourses(courseData);
+  };
+
+  useEffect(() => {
+    getCourses();
+  })
   return (
     <div className='course-container'>
-    {CoursesData.map(course => {
-        return (<Course name={course.name} />)
+    {courses.map(course => {
+        return (<Course name={course.courseName} />)
     })}
     </div>
   )
