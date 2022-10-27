@@ -15,4 +15,5 @@ public interface CoursesRepository extends JpaRepository<Course, Long> {
     @Query(value="SELECT * FROM course", nativeQuery = true)
     List<Course> getAllCourses();
 
+    void deleteCourseById(long id);
 }

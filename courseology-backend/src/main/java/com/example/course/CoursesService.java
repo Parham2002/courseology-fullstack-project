@@ -3,6 +3,7 @@ package com.example.course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -34,4 +35,12 @@ public class CoursesService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
+    public void deleteCourseById(long id) {
+        if (!coursesRepository.existsById(id)) {
+            throw new CourseNotFoundException();
+        }
+
+        coursesRepository.deleteCourseById(id);
+    }
 }

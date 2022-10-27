@@ -31,7 +31,7 @@ public class CoursesController {
         return ResponseEntity.status(HttpStatus.OK).body(coursesService.getAllCourses());
     }
 
-    @GetMapping("/courses/{id}")
+    @GetMapping("/course/{id}")
     public ResponseEntity<Course> getCourseById(@PathVariable long id) {
         return ResponseEntity.status(HttpStatus.OK).body(coursesService.getCourseById(id));
     }
@@ -39,5 +39,10 @@ public class CoursesController {
     // UPDATE
 
     // DELETE
+    @DeleteMapping("/course/{id}")
+    public ResponseEntity<Void> deleteGreetingById(@PathVariable long id) {
+        coursesService.deleteCourseById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 
 }
