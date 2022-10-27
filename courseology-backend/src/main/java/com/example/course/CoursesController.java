@@ -13,6 +13,11 @@ public class CoursesController {
     @Autowired
     CoursesService coursesService;
 
+    @ExceptionHandler
+    public ResponseEntity<String> handleExceptions(CourseNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+    }
+
     // CREATE
     @PostMapping("/course")
     public ResponseEntity<String> createCourse(@RequestBody Course course){
@@ -24,6 +29,11 @@ public class CoursesController {
     @GetMapping("/courses")
     public ResponseEntity<List<Course>> getCourses() {
         return ResponseEntity.status(HttpStatus.OK).body(coursesService.getAllCourses());
+    }
+
+    @GetMapping("/courses/{id}")
+    public ResponseEntity<Course> getCourseById(@PathVariable long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(coursesService.getCourseById(id));
     }
 
     // UPDATE
