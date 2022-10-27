@@ -43,4 +43,14 @@ public class CoursesService {
 
         coursesRepository.deleteCourseById(id);
     }
+
+    public void updateCourse(Course newCourse, long id) {
+        if (!coursesRepository.existsById(id)) {
+            throw new CourseNotFoundException();
+        }
+
+        newCourse.setId(id);
+
+        coursesRepository.save(newCourse);
+    }
 }
