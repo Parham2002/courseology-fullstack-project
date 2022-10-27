@@ -6,19 +6,27 @@ import Courses from './Pages/Courses/CoursesPage';
 import Layout from "./Pages/Layout/Layout";
 import Contact from "./Pages/Contact/Contact";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage"
+import AddCourse from './Pages/AddCourse/AddCourse';
+import EditCourse from './Pages/EditCourse/EditCourse';
+import Course from "./Pages/Course/Course"
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="Courses" element={<Courses />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div className='main-frame'>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="course" element={<Course/>} />
+            <Route path="courses" element={<Courses />} />
+            <Route path="addcourse" element={<AddCourse/>} />
+            <Route path="editcourse" element={<EditCourse/>} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

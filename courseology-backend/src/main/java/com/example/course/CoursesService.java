@@ -14,10 +14,12 @@ public class CoursesService {
     @Autowired
     CoursesRepository coursesRepository;
 
+    // CREATE
     public void createCourse(Course course) {
         coursesRepository.save(course);
     }
 
+    // READ
     public Course getCourseById(long id) {
         Optional<Course> course = coursesRepository.findById(id);
 
@@ -35,15 +37,7 @@ public class CoursesService {
                 .collect(Collectors.toList());
     }
 
-    @Transactional
-    public void deleteCourseById(long id) {
-        if (!coursesRepository.existsById(id)) {
-            throw new CourseNotFoundException();
-        }
-
-        coursesRepository.deleteCourseById(id);
-    }
-
+    // UPDATE
     public void updateCourse(Course newCourse, long id) {
         if (!coursesRepository.existsById(id)) {
             throw new CourseNotFoundException();
@@ -52,5 +46,15 @@ public class CoursesService {
         newCourse.setId(id);
 
         coursesRepository.save(newCourse);
+    }
+
+    // DELETE
+    @Transactional
+    public void deleteCourseById(long id) {
+        if (!coursesRepository.existsById(id)) {
+            throw new CourseNotFoundException();
+        }
+
+        coursesRepository.deleteCourseById(id);
     }
 }

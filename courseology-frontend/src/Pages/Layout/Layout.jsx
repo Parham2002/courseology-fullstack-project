@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
     <div className='header-container'>
-      <div className='header-container__title'>My Project</div>
+      <div className='header-container__title'>_courseology</div>
       <nav>
         <ul className='header-container__lists'>
           <li>

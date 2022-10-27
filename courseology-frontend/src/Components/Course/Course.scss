@@ -1,6 +1,16 @@
-.course {
+.course-card {
     border: 2px solid green;
-    width: 350px;
-    height: 350px;
-    text-align: center;
+    width: 250px;
+    height: 200px;
+    
+    &__name {
+        text-align: center;
+    }
+
+    Button {
+        position: relative;
+        left: 50px;
+        top: 100px;
+    }
 }
+
