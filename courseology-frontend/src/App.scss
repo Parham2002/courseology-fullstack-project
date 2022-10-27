@@ -1,5 +1,7 @@
 .main-frame {
   margin: 100px;
-  border: 2px solid brown;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px;
   overflow-y: scroll;
 }
