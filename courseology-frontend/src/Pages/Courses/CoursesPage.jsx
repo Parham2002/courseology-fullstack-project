@@ -7,7 +7,7 @@ import Button from "../../Components/Button/Button"
 const Courses = () => {
   return (
     <div className="course-page-container">
-      <Button name={"Add Course"} link={"/addcourse"}/>
+      <Button name={"Add Course"} link={"./addcourse"}/>
       <h1>Find Your Next Course!</h1>
       <SearchBar/>
       <CourseContainer />
