@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./CourseContainer.scss";
 import Course from "../../Components/Course/Course"
 
-const CourseContainer = () => {
+const CourseContainer = ({ searchTerm }) => {
   const [courses, setCourses] = useState([])
 
   const getCourses = async () => {
@@ -14,13 +14,22 @@ const CourseContainer = () => {
   useEffect(() => {
     getCourses();
   })
+
   return (
     <div className='course-container'>
-    {courses.map(course => {
-        return (<Course name={course.courseName} />)
+    {courses.filter((value) => {
+      if (value === "") {
+        return value;
+      } else if (value.courseName.toLowerCase().includes(searchTerm.toLowerCase())) {
+        return value;
+      }
+      return 0;
+    }).map((course, key) => {
+        return (<Course key={key} name={course.courseName} />)
     })}
     </div>
   )
 }
+
 
 export default CourseContainer
