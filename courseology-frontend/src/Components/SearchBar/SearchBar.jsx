@@ -4,7 +4,9 @@ import "./SearchBar.scss"
 const SearchBar = ({ setSearchTerm }) => {
 
   return (
-    <input type="text" placeholder='Search...' onChange={(event) => setSearchTerm(event.target.value)}/>
+    <div className='input'>
+      <input type="text" placeholder='Search...' onChange={(event) => setSearchTerm(event.target.value)}/>
+    </div>
   )
 }
 
