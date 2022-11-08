@@ -8,7 +8,7 @@ import Contact from "./Pages/Contact/Contact";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage"
 import AddCourse from './Pages/AddCourse/AddCourse';
 import EditCourse from './Pages/EditCourse/EditCourse';
-import Course from "./Pages/Course/Course"
+import CoursePage from "./Pages/Course/CoursePage"
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="course" element={<Course/>} />
+            <Route path="courses/course/:id" element={<CoursePage/>} />
             <Route path="courses" element={<Courses />} />
             <Route path="courses/addcourse" element={<AddCourse/>} />
             <Route path="course/editcourse" element={<EditCourse/>} />

@@ -25,7 +25,7 @@ const CourseContainer = ({ searchTerm }) => {
       }
       return 0;
     }).map((course, key) => {
-        return (<Course key={key} name={course.courseName} />)
+        return (<Course key={key} id={course.id} name={course.courseName} />)
     })}
     </div>
   )
