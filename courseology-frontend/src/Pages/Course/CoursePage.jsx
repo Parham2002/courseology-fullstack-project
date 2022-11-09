@@ -54,7 +54,7 @@ const CoursePage = () => {
       <div className="course__description">Description: <br/> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab eum aliquam libero voluptate natus impedit incidunt! Deserunt doloremque deleniti eligendi alias, corporis quasi recusandae molestiae illo eveniet. Amet, voluptate natus.</div>
       <div className="course__buttons">
         <Button name={"Delete"} onclick={togglePopUp} />
-        <Button name={"Edit"}/>
+        <Button name={"Edit"} link={`./edit`}/>
       </div>
       {deletePopUp && <div className="course__delete">
       Are you sure you wish to delete this course?

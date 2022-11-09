@@ -20,7 +20,7 @@ function App() {
             <Route path="courses/course/:id" element={<CoursePage/>} />
             <Route path="courses" element={<Courses />} />
             <Route path="courses/addcourse" element={<AddCourse/>} />
-            <Route path="course/editcourse" element={<EditCourse/>} />
+            <Route path="courses/course/:id/edit" element={<EditCourse/>} />
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>

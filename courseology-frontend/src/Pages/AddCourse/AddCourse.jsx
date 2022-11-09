@@ -21,7 +21,7 @@ const AddCourse = () => {
     }
   };
 
-  const defaultFormState = { author: "", courseName: "", category: "", description: "", imageURL: "", price: null, completionTime: "" };
+  const defaultFormState = { author: "", courseName: "", category: "", description: "", imageURL: "", price: "", completionTime: "" };
   return (
     <div className="add-course-container">
       <Form handleSubmit={handleSubmit} defaultFormState={defaultFormState} formTitle="Add A New Course"/>
