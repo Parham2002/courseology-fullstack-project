@@ -18,19 +18,23 @@ public class Course {
     private String author;
     private LocalDate dateCreated = LocalDate.now();
     private String completionTime;
+    private String description;
+    private String imageURL;
     private int price;
 
     public Course() {
 
     }
 
-    public Course(long id, String courseName, String category, String author, String completionTime, int price) {
+    public Course(long id, String courseName, String category, String author, String completionTime, String description, String imageURL, int price) {
         this.id = id;
         this.courseName = courseName;
         this.category = category;
         this.author = author;
         this.completionTime = completionTime;
         this.price = price;
+        this.description = description;
+        this.imageURL = imageURL;
     }
 
     public long getId() {
@@ -87,6 +91,21 @@ public class Course {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
 }
