@@ -36,3 +36,14 @@
     background-size: 100vw 100vh;
     overflow-y: scroll;
 }
+
+@media only screen and (max-width: 500px) {
+    .header-container {
+        justify-content: center;
+        &__title {
+            display: none;
+        }
+        &__lists {
+        }
+    }
+}

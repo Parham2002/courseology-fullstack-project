@@ -1,6 +1,5 @@
 import "./Form.scss"
 import { useState } from "react"
-import { useEffect } from "react";
 
 const Form = ({ defaultFormState, handleSubmit, formTitle}) => {
     const [course, setCourse] = useState(defaultFormState);

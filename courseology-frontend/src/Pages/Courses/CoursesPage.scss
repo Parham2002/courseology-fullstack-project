@@ -1,4 +1,6 @@
 .course-page-container {
+    width: 100%;
+    align-items: center;
     h1 {
         text-align: center;
     }
@@ -7,5 +9,22 @@
         margin-top: 10px;
         position: relative;
         left: 85%;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .course-page-container{
+        Button {
+            left: 75%;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .course-page-container{
+        Button {
+            left: 50%;
+        }
     }
 }

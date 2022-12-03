@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import "./CourseContainer.scss";
 import Course from "../../Components/Course/Course"
 
@@ -13,19 +13,19 @@ const CourseContainer = ({ searchTerm }) => {
 
   useEffect(() => {
     getCourses();
-  })
+  });
 
   return (
     <div className='course-container'>
     {courses.filter((value) => {
       if (value === "") {
         return value;
-      } else if (value.courseName.toLowerCase().includes(searchTerm.toLowerCase())) {
+      } else if (value.courseName?.toLowerCase().includes(searchTerm.toLowerCase())) {
         return value;
       }
       return 0;
     }).map((course, key) => {
-        return (<Course key={key} id={course.id} name={course.courseName} />)
+        return (<Course key={key} id={course.id} name={course.courseName} imageURL={course.imageURL} />)
     })}
     </div>
   )

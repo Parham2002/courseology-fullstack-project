@@ -1,13 +1,28 @@
 .course-container {
-    width: 1200px;
+    width: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     margin: 25px;
-    padding: 25px;
     gap: 50px;
-
-
-    
+    padding: 25px;
 
 }
+@media only screen and (max-width: 1250px) {
+    .course-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .course-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 610px) {
+    .course-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

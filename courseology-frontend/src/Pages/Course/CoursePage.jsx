@@ -22,7 +22,7 @@ const CoursePage = () => {
     showDeletePopUp(!deletePopUp)
   }
 
-  const handleDelete = async () => {
+  const handleDelete = async id => {
 
     const result = await fetch(`http://localhost:8080/course/${id}`, {
       method: "DELETE",
@@ -42,14 +42,13 @@ const CoursePage = () => {
 
   useEffect(() => {
     getCourseById(id);
-  }, [id]);
-  console.log(course.description);
+  });
 
   return (
     <>
     <div className='course'>
       <div className="course__name">{course.courseName}</div>
-      <div className="course__image"><img src={course.imgURL? null (course.imgURL) : NoImage} alt="" /></div>
+      <div className="course__image"><img src={course.imageURL ? course.imageURL : NoImage} alt="" /></div>
       <div className="course__info">Author: {course.author} <br/> Category: {course.category} <br/> Completion Time: {course.completionTime} <br/> Price: {course.price} <br/> Date Created: {course.dateCreated}</div>
       <div className="course__description">Description: <br/> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab eum aliquam libero voluptate natus impedit incidunt! Deserunt doloremque deleniti eligendi alias, corporis quasi recusandae molestiae illo eveniet. Amet, voluptate natus.</div>
       <div className="course__buttons">

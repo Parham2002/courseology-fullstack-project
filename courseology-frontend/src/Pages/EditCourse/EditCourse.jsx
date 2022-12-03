@@ -9,16 +9,14 @@ const EditCourse = () => {
   const { id } = useParams();
   const [course, setCourse] = useState([]);
 
-  const getCourseById = async () => {
+  const getCourseById = async id => {
     const url = `http://localhost:8080/course/${id}`;
     const response = await fetch(url);
     const courseData = await response.json();
     setCourse(courseData);
   };
 
-  useEffect(() => {
-    getCourseById(id);
-  }, [id]);
+
 
   const handleUpdate = async updatedCourse => {
     const result = await fetch(`http://localhost:8080/course/${id}`, {
@@ -38,11 +36,14 @@ const EditCourse = () => {
     }
   };
 
+  useEffect(() => {
+    getCourseById(id);
+  }, [id]);
+
   const defaultFormState = { author: course.author, courseName: course.courseName, category: course.category, description: course.description, imageURL: course.imageURL, price: course.price, completionTime: course.completionTime };
-  console.log(defaultFormState);
   return (
     <div className="edit-course-container">
-      <Form handleSubmit={handleUpdate} defaultFormState={defaultFormState} formTitle="Edit the course"/>
+      <Form handleSubmit={handleUpdate} defaultFormState={defaultFormState} formTitle="Edit course"/>
     </div>
   )
 }
